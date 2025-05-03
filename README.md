@@ -11,5 +11,6 @@ This repository is designed to help beginners make their first pull request (PR)
 2. **Add** your simple Python project
 3. **Submit** a Pull Request
 
-
 ---
+
+![Banner](./Banner.png)
