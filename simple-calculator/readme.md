@@ -4,13 +4,6 @@ A beautifully designed, minimal, and fully functional **GUI Calculator** built u
 
 ---
 
-## 📸 Preview
-
-> ![Calculator Preview](https://user-images.githubusercontent.com/placeholder/preview.png)  
-> *Elegant and responsive GUI with modern styling.*
-
----
-
 ## 🛠️ Features
 
 - Responsive GUI layout
@@ -43,7 +36,6 @@ A beautifully designed, minimal, and fully functional **GUI Calculator** built u
    ```bash
    python calculator.py
    ```
-
 ---
 
 ## 💻 Code Highlights
@@ -75,15 +67,4 @@ A beautifully designed, minimal, and fully functional **GUI Calculator** built u
 └── README.md          # Project documentation
 ```
 
----
-
-## 📜 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-## 🙌 Contributed by
-
-**Vijay Rajesh R**  
-GitHub: [vijayrajeshr](https://github.com/vijayrajeshr)
+## By **Vijay Rajesh R**  - [vijayrajeshr](https://github.com/vijayrajeshr)
