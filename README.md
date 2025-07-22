@@ -1,5 +1,7 @@
 # First Python Contributions 🐍
 
+🌟 **If you found this helpful, please consider giving it a star to support the project and help others discover it. ¡Gracias!** 🌟
+
 ✨ **Welcome to your good first issue** ✨
 
 This repository is designed to help beginners make their first pull request (PR) by contributing a simple Python project. Whether you're new to Git/GitHub or just starting with Python, this is the perfect place to begin your open-source journey.
