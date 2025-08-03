@@ -1,39 +1,39 @@
-def calcular_imc(peso, altura):
-    """Calcula el Índice de Masa Corporal"""
-    return peso / (altura ** 2)
+def calculate_bmi(weight, height):
+    """Calculate the Body Mass Index"""
+    return weight / (height ** 2)
 
-def clasificar_peso(imc):
-    """Devuelve la categoría según el IMC"""
-    if imc < 18.5:
-        return "Bajo peso"
-    elif 18.5 <= imc < 25:
-        return "Peso normal"
-    elif 25 <= imc < 30:
-        return "Sobrepeso"
+def classify_weight(bmi):
+    """Returns the category according to BMI"""
+    if bmi < 18.5:
+        return "Underweight"
+    elif 18.5 <= bmi < 25:
+        return "Normal weight"
+    elif 25 <= bmi < 30:
+        return "Overweight"
     else:
-        return "Obesidad"
+        return "Obesity"
 
 def main():
-    print("Calculadora de IMC y Peso Ideal")
+    print("BMI and Ideal Weight Calculator")
     print("-------------------------------")
     
     try:
-        peso = float(input("Ingrese su peso en kg: "))
-        altura = float(input("Ingrese su altura en metros: "))
+        weight = float(input("Enter your weight in kg: "))
+        height = float(input("Enter your height in meters: "))
         
-        imc = calcular_imc(peso, altura)
-        categoria = clasificar_peso(imc)
+        bmi = calculate_bmi(weight, height)
+        category = classify_weight(bmi)
         
-        print(f"\nIMC: {imc:.1f}")
-        print(f"Categoría: {categoria}")
+        print(f"\nBMI: {bmi:.1f}")
+        print(f"Category: {category}")
         
-        # Mostrar rango de peso ideal
-        peso_min = 18.5 * (altura ** 2)
-        peso_max = 24.9 * (altura ** 2)
-        print(f"\nPara tu altura ({altura}m), el peso ideal sería entre {peso_min:.1f}kg y {peso_max:.1f}kg")
+        # Show ideal weight range
+        min_weight = 18.5 * (height ** 2)
+        max_weight = 24.9 * (height ** 2)
+        print(f"\nFor your height ({height}m), the ideal weight would be between {min_weight:.1f}kg and {max_weight:.1f}kg")
     
     except ValueError:
-        print("\nError: Ingresa valores numéricos válidos")
+        print("\nError: Please enter valid numeric values")
 
 if __name__ == "__main__":
     main()
