@@ -14,6 +14,14 @@ This repository is designed to help beginners make their first pull request (PR)
 2. **Add** your simple Python project
 3. **Submit** a Pull Request
 
+## 🌍 Participating Countries
+
+We welcome contributors from around the world! Here are the countries represented in our community:
+
+Ecuador 🇪🇨
+
+*Want to add your country? Make a contribution and follow the instructions in `/Colaborators/instructions.md` to add yourself to our collaborators list!*
+
 ---
 
 ![Banner](./Banner.png)
