@@ -18,7 +18,7 @@ This repository is designed to help beginners make their first pull request (PR)
 
 We welcome contributors from around the world! Here are the countries represented in our community:
 
-🇪🇨
+🇪🇨 🇮🇳 🇲🇽 🇵🇰
 
 *Want to add your country? Make a contribution and follow the instructions in `/Colaborators/instructions.md` to add yourself to our collaborators list!*
 
