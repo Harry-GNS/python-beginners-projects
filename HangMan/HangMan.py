@@ -28,7 +28,7 @@ while i in range(7):  # User has 8 guesses (i is 0 based)
         print("Incorrect letter")
         i+=1
     if display == word:
-        print("You guessed the word! You had " + str(7-i) + " guesses left")
+        print("You guessed the word! You had " + str(7-i + 1) + " guesses left")
         break
 
     used_letters = used_letters + input_letter  # Saving used letters
