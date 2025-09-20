@@ -16,3 +16,9 @@ Ecuador 🇪🇨
 India 🇮🇳 
 "Small steps, lasting impact."
 
+---
+
+3. Ofek Hodis
+[@Ofek-Hodis](https://github.com/Ofek-Hodis)
+Anonymous :)
+"It is necessary to have been ruined over generations repairing the old, crumbling castle in order to learn to love it."
