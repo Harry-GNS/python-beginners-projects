@@ -64,6 +64,9 @@ Thanks to these amazing contributors who have participated in the project:
 	<a href="https://github.com/Srijani-Das07">
 		<img src="https://github.com/Srijani-Das07.png" width="60" height="60" alt="Srijani-Das07" title="Srijani-Das07" style="border-radius: 50%;">
 	</a>
+	<a href="https://github.com/Ofek-Hodis">
+		<img src="https://github.com/Ofek-Hodis.png" width="60" height="60" alt="Ofek-Hodis" title="Ofek-Hodis" style="border-radius: 50%;">
+	</a>
 </div>
 
 ---
