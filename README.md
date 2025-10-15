@@ -68,6 +68,9 @@ Thanks to these amazing contributors who have participated in the project:
 		<img src="https://github.com/Ofek-Hodis.png" width="60" height="60" alt="Ofek-Hodis" title="Ofek-Hodis" style="border-radius: 50%;">
 	</a>
 </div>
+	<a href="https://github.com/Chiragj2003">
+		<img src="https://github.com/Chiragj2003.png" width="60" height="60" alt="Chiragj2003" title="Chiragj2003" style="border-radius: 50%;">
+	</a>
 
 ---
 
