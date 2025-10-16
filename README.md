@@ -23,13 +23,7 @@ This repository is designed to help beginners make their first Pull Request (PR)
 
 ---
 
-## 🚀 How to contribute?
 
-1. **Fork** this repository
-2. **Add** your simple Python project
-3. **Submit** a Pull Request
-
----
 
 ## 🌍 Participating Countries
 
