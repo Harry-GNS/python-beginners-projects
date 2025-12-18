@@ -22,3 +22,10 @@ India 🇮🇳
 [@Ofek-Hodis](https://github.com/Ofek-Hodis)
 Anonymous :)
 "It is necessary to have been ruined over generations repairing the old, crumbling castle in order to learn to love it."
+
+---
+
+4. Shanmukh
+[@krishn212](https://github.com/krishn212)
+India 🇮🇳
+"The secret of getting ahead is getting started."
