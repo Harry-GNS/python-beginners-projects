@@ -40,33 +40,35 @@ Want to add your country? Make a contribution and follow the instructions in [`/
 Thanks to these amazing contributors who have participated in the project:
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;">
-	<a href="https://github.com/Harry-GNS">
-		<img src="https://github.com/Harry-GNS.png" width="60" height="60" alt="Harry-GNS" title="Harry-GNS" style="border-radius: 50%;">
-	</a>
-	<a href="https://github.com/vijayrajeshr">
-		<img src="https://github.com/vijayrajeshr.png" width="60" height="60" alt="vijayrajeshr" title="vijayrajeshr" style="border-radius: 50%;">
-	</a>
-	<a href="https://github.com/JAEscobedo">
-		<img src="https://github.com/JAEscobedo.png" width="60" height="60" alt="JAEscobedo" title="JAEscobedo" style="border-radius: 50%;">
-	</a>
-	<a href="https://github.com/CodeWithNehaGeorge">
-		<img src="https://github.com/CodeWithNehaGeorge.png" width="60" height="60" alt="CodeWithNehaGeorge" title="CodeWithNehaGeorge" style="border-radius: 50%;">
-	</a>
-	<a href="https://github.com/Hassan9255">
-		<img src="https://github.com/Hassan9255.png" width="60" height="60" alt="Hassan9255" title="Hassan9255" style="border-radius: 50%;">
-	</a>
-	<a href="https://github.com/Srijani-Das07">
-		<img src="https://github.com/Srijani-Das07.png" width="60" height="60" alt="Srijani-Das07" title="Srijani-Das07" style="border-radius: 50%;">
-	</a>
-	<a href="https://github.com/Ofek-Hodis">
-		<img src="https://github.com/Ofek-Hodis.png" width="60" height="60" alt="Ofek-Hodis" title="Ofek-Hodis" style="border-radius: 50%;">
-	</a>
-	<a href="https://github.com/Chiragj2003">
-		<img src="https://github.com/Chiragj2003.png" width="60" height="60" alt="Chiragj2003" title="Chiragj2003" style="border-radius: 50%;">
-	</a>
-	<a href="https://github.com/aashaykk"
-		<img src="https://github.com/aashayk.png" width="60" height="60" alt="Ofek-Hodis" title="aashayk" style="border-radius: 50%;">
-	</a>
+    <a href="https://github.com/Harry-GNS">
+        <img src="https://github.com/Harry-GNS.png" width="60" height="60" alt="Harry-GNS" title="Harry-GNS" style="border-radius: 50%;">
+    </a>
+    <a href="https://github.com/vijayrajeshr">
+        <img src="https://github.com/vijayrajeshr.png" width="60" height="60" alt="vijayrajeshr" title="vijayrajeshr" style="border-radius: 50%;">
+    </a>
+    <a href="https://github.com/JAEscobedo">
+        <img src="https://github.com/JAEscobedo.png" width="60" height="60" alt="JAEscobedo" title="JAEscobedo" style="border-radius: 50%;">
+    </a>
+    <a href="https://github.com/CodeWithNehaGeorge">
+        <img src="https://github.com/CodeWithNehaGeorge.png" width="60" height="60" alt="CodeWithNehaGeorge" title="CodeWithNehaGeorge" style="border-radius: 50%;">
+    </a>
+    <a href="https://github.com/Hassan9255">
+        <img src="https://github.com/Hassan9255.png" width="60" height="60" alt="Hassan9255" title="Hassan9255" style="border-radius: 50%;">
+    </a>
+    <a href="https://github.com/Srijani-Das07">
+        <img src="https://github.com/Srijani-Das07.png" width="60" height="60" alt="Srijani-Das07" title="Srijani-Das07" style="border-radius: 50%;">
+    </a>
+    <a href="https://github.com/Ofek-Hodis">
+        <img src="https://github.com/Ofek-Hodis.png" width="60" height="60" alt="Ofek-Hodis" title="Ofek-Hodis" style="border-radius: 50%;">
+    </a>
+    <a href="https://github.com/Chiragj2003">
+        <img src="https://github.com/Chiragj2003.png" width="60" height="60" alt="Chiragj2003" title="Chiragj2003" style="border-radius: 50%;">
+    </a>
+    <a href="https://github.com/aashaykk">
+        <img src="https://github.com/aashaykk.png" width="60" height="60" alt="aashaykk" title="aashaykk" style="border-radius: 50%;">
+    </a>
+</div>
+>
 
 ---
 
