@@ -1,0 +1,6 @@
+# Ignore the auto-generated data file
+accounts.json
+
+# Ignore Python's internal cache files
+__pycache__/
+*.pyc
