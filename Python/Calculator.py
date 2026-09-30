@@ -1,29 +1,42 @@
-history=[]
+print("**** WELCOME TO THE CALCULATOR ****")
+print("-- PRESS 0 TO TERMINATE --")
 
 while True:
 
-    a=float(input("Enter first number: "))
-    b=float(input("Enter second number: "))
-    operator= input("Enter an operator(+,-,*,/): ")
+    a = float(input("Enter first number (0 to exit): "))
+        
+    if a == 0:
+        print("\nGoodbye!\n")
+        break 
 
-    if operator=="+":
-        ans=print(f"The answer is: {round((a+b), 2)}")
-        history.append(ans)
+    b = float(input("Enter second number: "))
+    operator= input("Enter an operator(+ ,- ,* ,/ ): ")
 
-    elif operator=="-":
-        ans=print(f"The answer is: {round((a-b), 2)}")
-        history.append(ans)
+    if operator == "+":
+        ans = a + b
+        print(f"The answer is : {ans}")
+        
+    elif operator == "-":
+        ans = a - b
+        print(f"The answer is : {ans}")
 
-    elif operator=="*":
-        ans=print(f"The answer is: {round((a*b), 2)}")
-        history.append(ans) 
+    elif operator == "*":
+        ans = a * b
+        print(f"The answer is : {ans}")
 
-    elif operator=="/":
-        ans=print(f"The answer is: {round((a/b), 2)}")
-        history.append(ans)
+    elif operator == "/":
 
-    elif operator!="+" or operator!="-" or operator!="*" or operator!="/":
-        print(f"The {operator} is invalid")
+        if b == 0:
+            print("Error : cannot divide by zero.")
+            continue 
+
+        ans = a / b
+        print(f"The answer is : {ans}")
+
+    else:
+        print("This is not a valid operator.")
+        continue
+         
 
     
 
