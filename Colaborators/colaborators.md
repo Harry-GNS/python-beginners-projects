@@ -38,3 +38,8 @@ Sri Lanka 🇱🇰
 Ireland 🇮🇪  
 "Every small commit is a step toward becoming a better developer."
 
+8. Maryam Amjed
+[@maryamamjedDev](https://github.com/maryamamjedDev)
+Pakistan 🇵🇰
+"Keep learning, keep building, and keep improving."
+
