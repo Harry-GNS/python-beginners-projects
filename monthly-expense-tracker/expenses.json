@@ -1,0 +1,20 @@
+[
+    {
+        "date": "09-10-2026",
+        "name": "Lunch",
+        "category": "Food",
+        "amount": 2000.0
+    },
+    {
+        "date": "09-10-2026",
+        "name": "Bus",
+        "category": "Transport",
+        "amount": 5000.0
+    },
+    {
+        "date": "09-10-2026",
+        "name": "Party",
+        "category": "Transport",
+        "amount": 4000.0
+    }
+]
