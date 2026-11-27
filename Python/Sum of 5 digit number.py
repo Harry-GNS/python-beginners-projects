@@ -1,4 +1,12 @@
-number= int(input("Enter a 5 digit number: "))
+while True:
+    try:
+        number= abs(int(input("Enter a 5 digit number: ")))
+    except ValueError:
+        print("Please enter a whole number")
+        continue
+    if 10000<=number<=99999:
+        break
+    print("Please enter a number with exactly 5 digits")
 
 first= number%10
 one= int(number/10)

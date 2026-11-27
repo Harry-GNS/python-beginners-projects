@@ -19,7 +19,7 @@ for item, price in menu.items():
 print("-------------------------------")
 
 while True:
-    order = input("What would you like to buy? (E to end): ").upper()
+    order = input("What would you like to buy? (E to end): ").strip().upper()
 
     if order == "E":
         break
@@ -37,4 +37,4 @@ print("\nYour order is:")
 for item in cart:
     print(f"- {item} ({menu[item]})")
 
-print(f"\nTotal cost: ${total}")
+print(f"\nTotal cost: ${total:.2f}")

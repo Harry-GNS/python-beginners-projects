@@ -5,7 +5,17 @@ answer=random.randint(1,100)
 guess=0
 
 while True:
-    question=int(input("Enter a number between 1 and 100: "))
+    try:
+        question=int(input("Enter a number between 1 and 100: "))
+    except ValueError:
+        print("The input is invalid")
+        continue
+
+    if question<1 or question>100:
+        print("The input is invalid")
+        continue
+
+    guess=guess+1
 
     if question==answer:
         print(f"{answer} is the correct answer!")
@@ -14,14 +24,9 @@ while True:
 
     elif question>answer:
         print("The answer is too high")
-        guess= guess+1
-
-    elif question<answer:
-        print("The answer is too low")
-        guess=guess+1 
 
     else:
-        print("The input is invalid")
+        print("The answer is too low")
         
                    
 

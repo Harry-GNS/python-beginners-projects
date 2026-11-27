@@ -1,5 +1,5 @@
 Questions= ("Who is the prime minister of India?",
-            "How many elements are their in periodic table?",
+            "How many elements are there in the periodic table?",
             "Who is the richest person in the world?",
             "Who is known as the father of computer?",)
 
@@ -29,13 +29,13 @@ for question,option,correct in zip(Questions,options,answers):
 
     elif ans in test and ans!=correct:
         print("Wrong answer❌")
-        print(f"The correct asnwer is:{correct}")    
+        print(f"The correct answer is:{correct}")
 
     elif ans not in test:
         print("This option is not available")
 
 
-print(f"Your score is {score}/4")
+print(f"Your score is {score}/{len(Questions)}")
 
 
 

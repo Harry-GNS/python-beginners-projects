@@ -1,3 +1,5 @@
+import math
+
 foods=[]
 prices=[]
 while True:
@@ -12,6 +14,9 @@ while True:
         continue
     try:
       price=float(input("Enter the price of the item: "))
+      # float() also accepts "nan" and "inf", which are not usable prices
+      if not math.isfinite(price):
+         raise ValueError
       if price<=0:
          print("Invalid price. Price must be greater than 0")
          continue
@@ -23,7 +28,7 @@ while True:
 print("------YOUR CART-----")
 print(f"{'Food':<15} {'Price':<10}")
 for f,p in zip(foods, prices):
-    print(f"{f:<15} {p:<10}")
+    print(f"{f:<15} ${p:.2f}")
 total = sum(prices)
 print(f"Total: ${total:.2f}")
 

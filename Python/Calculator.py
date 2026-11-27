@@ -1,15 +1,25 @@
+import math
+
 print("**** WELCOME TO THE CALCULATOR ****")
-print("-- PRESS 0 TO TERMINATE --")
+print("-- PRESS Q TO TERMINATE --")
 
 while True:
 
-    a = float(input("Enter first number (0 to exit): "))
-        
-    if a == 0:
-        print("\nGoodbye!\n")
-        break 
+    first = input("Enter first number (q to exit): ")
 
-    b = float(input("Enter second number: "))
+    if first.strip().lower() == "q":
+        print("\nGoodbye!\n")
+        break
+
+    try:
+        a = float(first)
+        b = float(input("Enter second number: "))
+        # float() also accepts "nan" and "inf", which are not usable numbers
+        if not (math.isfinite(a) and math.isfinite(b)):
+            raise ValueError
+    except ValueError:
+        print("Error : please enter a valid number.")
+        continue
     operator= input("Enter an operator(+ ,- ,* ,/ ): ")
 
     if operator == "+":

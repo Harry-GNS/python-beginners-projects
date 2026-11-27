@@ -1,5 +1,3 @@
-import random
-
 name = input("Enter your name: ")
 
 options = ("ROCK", "PAPER", "SCISSORS")
@@ -9,7 +7,7 @@ score_comp = 0
 
 
 while score_user < 10 and score_comp < 10:
-    user_turn = input("Choose Rock, Paper or Scissors: ").upper()
+    user_turn = input("Choose Rock, Paper or Scissors: ").strip().upper()
     
     
     if user_turn=="PAPER":
@@ -20,6 +18,10 @@ while score_user < 10 and score_comp < 10:
 
     elif user_turn=="SCISSORS":
         comp_turn="ROCK"
+
+    else:
+        print("Invalid choice. Please choose Rock, Paper or Scissors.")
+        continue
 
 
     print(f"You chose {user_turn}")
