@@ -4,6 +4,7 @@ from datetime import datetime
 import json
 import os
 import math
+import shutil
 
 # ---------------- COLORS ----------------
 BG = "#F5F2EB"
@@ -20,7 +21,50 @@ DATA_FILE = os.path.join(
     "expenses.json"
 )
 
-budget = 10000
+BACKUP_FILE = DATA_FILE + ".bak"
+
+BUDGET_FILE = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "budget.json"
+)
+
+DEFAULT_BUDGET = 10000
+
+
+def load_budget():
+    try:
+        with open(BUDGET_FILE, "r", encoding="utf-8") as file:
+            value = json.load(file).get("budget")
+
+    except (json.JSONDecodeError, OSError, AttributeError):
+        return DEFAULT_BUDGET
+
+    if (
+        isinstance(value, (int, float))
+        and not isinstance(value, bool)
+        and math.isfinite(value)
+        and value > 0
+    ):
+        return value
+
+    return DEFAULT_BUDGET
+
+
+def save_budget(value):
+    try:
+        with open(BUDGET_FILE, "w", encoding="utf-8") as file:
+            json.dump({"budget": value}, file, indent=4)
+        return True
+
+    except OSError as error:
+        messagebox.showerror(
+            "Save Error",
+            f"Could not save budget:\n{error}"
+        )
+        return False
+
+
+budget = load_budget()
 
 
 def load_expenses():
@@ -64,10 +108,20 @@ def load_expenses():
         return valid_expenses
 
     except (json.JSONDecodeError, OSError, ValueError):
+        # The next save replaces expenses.json, so keep a copy of the unreadable file
+        backup_note = ""
+        try:
+            shutil.copyfile(DATA_FILE, BACKUP_FILE)
+            backup_note = "A copy was saved as expenses.json.bak.\n"
+        except OSError:
+            pass
+
         messagebox.showerror(
             "File Error",
             "Could not read expenses.json.\n"
-            "Please check the file before continuing."
+            + backup_note
+            + "Please check the file before continuing.",
+            parent=root
         )
         return []
 
@@ -86,14 +140,15 @@ def save_expenses():
         return False
 
 
-expenses = load_expenses()
-
 # ---------------- MAIN WINDOW ----------------
 root = tk.Tk()
 root.title("My Monthly Expense Tracker")
 root.geometry("1050x700")
 root.minsize(850, 600)
 root.configure(bg=BG)
+
+# Loaded after the window exists so an error message has a window to belong to
+expenses = load_expenses()
 
 # ---------------- HEADER ----------------
 header = tk.Frame(root, bg=BROWN, height=100)
@@ -364,24 +419,16 @@ def delete_expense():
         )
         return
 
-    rows = [
-        (table.index(row), expenses[table.index(row)])
-        for row in selected
-    ]
+    indexes = sorted((table.index(row) for row in selected), reverse=True)
+    removed = [(index, expenses.pop(index)) for index in indexes]
+
+    if not save_expenses():
+        for index, expense in reversed(removed):
+            expenses.insert(index, expense)
+        return
 
     for row in selected:
         table.delete(row)
-
-    for index, _ in sorted(rows, reverse=True):
-        expenses.pop(index)
-
-    if not save_expenses():
-        expenses.extend([])
-        messagebox.showwarning(
-            "Warning",
-            "Please check expenses.json. The changes may not be saved.",
-            parent=root
-        )
 
     update_summary()
 
@@ -432,6 +479,9 @@ def change_budget():
             "Enter a valid budget greater than zero.",
             parent=root
         )
+        return
+
+    if not save_budget(value):
         return
 
     budget = value
