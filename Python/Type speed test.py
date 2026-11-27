@@ -1,3 +1,4 @@
+import difflib
 import time
 
 ready = input("Type Start when you are ready: ").capitalize()
@@ -11,12 +12,12 @@ if ready == "Start":
 
     time_taken = round(end - start, 2)
 
-    if type_user == sen:
-        print("100% Accuracy")
-        print(f"Time taken: {time_taken} sec")
+    accuracy = round(difflib.SequenceMatcher(None, sen, type_user).ratio() * 100)
+    words_per_minute = round(len(type_user.split()) / (time_taken / 60)) if time_taken > 0 else 0
 
-    else:
-        print("Poor accuracy!")
+    print(f"Accuracy: {accuracy}%")
+    print(f"Time taken: {time_taken} sec")
+    print(f"Speed: {words_per_minute} words per minute")
 
 else:
     print("Exit")
