@@ -37,12 +37,17 @@ if start == "S":
 
         ask = input("Guess a letter: ").lower()
 
+        if len(ask) != 1 or not ask.isalpha():
+            print("Please enter a single letter.")
+            continue
+
         if ask in guessed:
             print("You already guessed that letter!")
             continue
 
+        guessed.append(ask)
+
         if ask in main_word:
-            guessed.append(ask)
             print("✅ Correct guess!")
         else:
             lives += 1
