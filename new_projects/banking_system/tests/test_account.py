@@ -27,6 +27,23 @@ class TestAccount(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.account.deposit(-10)
 
+    def test_balance_is_rounded_to_cents(self):
+        account = Account("654321", "Test User")
+        account.deposit(0.1)
+        self.assertEqual(account.deposit(0.2), 0.3)
+
+    def test_opening_balance_is_rounded_to_cents(self):
+        account = Account("654321", "Test User", 10.006)
+        self.assertEqual(account.balance, 10.01)
+        self.assertEqual(account.withdraw(10.01), 0)
+
+    def test_amounts_below_one_cent_are_rejected(self):
+        with self.assertRaises(ValueError):
+            self.account.deposit(0.004)
+        with self.assertRaises(ValueError):
+            self.account.withdraw(0.004)
+        self.assertEqual(self.account.balance, 100)
+
 
 if __name__ == "__main__":
     unittest.main()

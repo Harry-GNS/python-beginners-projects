@@ -9,6 +9,11 @@ class AccountIDError(Exception):
     pass
 
 
+class DataFileError(Exception):
+    """Raised when the saved accounts file cannot be read."""
+    pass
+
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_FILE = os.path.join(BASE_DIR, "accounts.json")
 
@@ -23,14 +28,19 @@ class BankManager:
     def load_accounts(self):
         """Load accounts from JSON file if it exists."""
         if os.path.exists(DATA_FILE):
-            with open(DATA_FILE, "r") as file:
-                data = json.load(file)
-                for acc_id, info in data.items():
-                    self._accounts[acc_id] = Account(
-                        info["account_number"],
-                        info["customer_name"],
-                        info["balance"]
-                    )
+            try:
+                with open(DATA_FILE, "r") as file:
+                    data = json.load(file)
+                    for acc_id, info in data.items():
+                        self._accounts[acc_id] = Account(
+                            info["account_number"],
+                            info["customer_name"],
+                            info["balance"]
+                        )
+            except (json.JSONDecodeError, AttributeError, KeyError, TypeError):
+                raise DataFileError(
+                    "Could not read accounts.json. Fix or delete the file and try again."
+                )
 
     def save_accounts(self):
         """Save all accounts to JSON file."""
@@ -50,6 +60,11 @@ class BankManager:
 
     def create_account(self, name: str, initial_deposit: float) -> Account:
         """Create a new bank account."""
+        name = name.strip()
+        if not name:
+            raise ValueError("Customer name cannot be empty.")
+        if initial_deposit < 0:
+            raise ValueError("Initial deposit cannot be negative.")
         acc_id = self.create_account_id()
         account = Account(acc_id, name, initial_deposit)
         self._accounts[acc_id] = account
