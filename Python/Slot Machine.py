@@ -9,8 +9,16 @@ def intro():
     print("SLOT MACHINE")
     print("-------------")
     print(f"Balance:${balance}")
-    bet=int(input("Enter your bet amount:$"))
-    if bet<=balance:
+    try:
+        bet=int(input("Enter your bet amount:$"))
+    except ValueError:
+        print("Invalid bet. Please enter a whole number.")
+        return
+
+    if bet<=0:
+        print("Invalid bet. Bet must be greater than 0.")
+
+    elif bet<=balance:
         start=input("Press S to start:").upper()
 
         slot1=random.choice(items)
@@ -36,9 +44,6 @@ def intro():
         else:
             print("Invalid option")
 
-    elif balance==0:
-        print(f"GAME OVER! Your balance has reached {balance}")
-    
     else:
         print("Insufficient balance")
         
@@ -48,4 +53,5 @@ if __name__=="__main__":
     while True:
         intro()
         if balance==0:
+            print(f"GAME OVER! Your balance has reached {balance}")
             break
