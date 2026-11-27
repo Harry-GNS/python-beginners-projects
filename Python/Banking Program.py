@@ -3,15 +3,30 @@ balance=0
 def show_balance():
     print(f"Your balance is:${balance}")
 
+def read_amount(prompt):
+    try:
+        amount=int(input(prompt))
+    except ValueError:
+        print("Invalid amount. Please enter a whole number.")
+        return None
+    if amount<=0:
+        print("Invalid amount. Amount must be greater than 0.")
+        return None
+    return amount
+
 def deposit():
     global balance
-    dep_amount=int(input("Enter the amount to be deposited:$ "))  
+    dep_amount=read_amount("Enter the amount to be deposited:$ ")
+    if dep_amount is None:
+        return
     balance=balance+dep_amount
     print(f"${dep_amount} has been deposited")
 
 def withdraw():
     global balance
-    with_amount=int(input("Enter the amount to be withdrawn:$ "))
+    with_amount=read_amount("Enter the amount to be withdrawn:$ ")
+    if with_amount is None:
+        return
     if with_amount>balance:
         print("Insufficient balance")
     else:
