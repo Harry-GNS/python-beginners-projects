@@ -1,7 +1,11 @@
 import tkinter as tk
 
+ALLOWED_CHARACTERS = set("0123456789+-*/.() ")
+
 def button_click(value):
     current = entry.get()
+    if current == "Error":
+        current = ""
     entry.delete(0, tk.END)
     entry.insert(tk.END, current + str(value))
 
@@ -10,16 +14,20 @@ def clear_entry():
 
 def backspace():
     current = entry.get()
+    if current == "Error":
+        current = ""
     entry.delete(0, tk.END)
     entry.insert(tk.END, current[:-1])
 
 def evaluate():
     try:
         expression = entry.get()
+        if not set(expression) <= ALLOWED_CHARACTERS:
+            raise ValueError("Only numbers and + - * / are allowed")
         result = eval(expression)
         entry.delete(0, tk.END)
         entry.insert(tk.END, str(result))
-    except Exception as e:
+    except Exception:
         entry.delete(0, tk.END)
         entry.insert(tk.END, "Error")
 
@@ -64,8 +72,10 @@ tk.Button(
     command=backspace, bg="#ff6b6b", fg="#282c35"
 ).grid(row=row_val, column=col_val, sticky="nsew")
 
-for i in range(1, 5):
+for i in range(1, 6):
     root.grid_rowconfigure(i, weight=1)
+
+for i in range(4):
     root.grid_columnconfigure(i, weight=1)
 
 # Main loop
