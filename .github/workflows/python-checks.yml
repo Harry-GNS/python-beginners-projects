@@ -1,0 +1,45 @@
+name: Python checks
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.x"
+
+      - name: Check that every Python file has valid syntax
+        run: python -m compileall -q .
+
+      # Any project with a "tests" folder is picked up automatically.
+      - name: Run every project's unit tests
+        run: |
+          failed=0
+          while IFS= read -r tests_dir; do
+            project=$(dirname "$tests_dir")
+            echo "::group::$project"
+            result=0
+            (
+              cd "$project" || exit 1
+              if [ -f requirements.txt ]; then
+                python -m pip install -q -r requirements.txt || exit 1
+              fi
+              python -m unittest discover -s tests
+            ) || result=$?
+            echo "::endgroup::"
+            if [ "$result" -eq 5 ]; then
+              # unittest exits with 5 when the folder has no unittest tests
+              echo "::warning::$project/tests has no unittest tests"
+            elif [ "$result" -ne 0 ]; then
+              echo "::error::Tests failed in $project"
+              failed=1
+            fi
+          done < <(find . -type d -name tests -not -path "./.git/*" | sort)
+          exit "$failed"
