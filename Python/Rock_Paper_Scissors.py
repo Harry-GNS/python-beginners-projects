@@ -8,7 +8,12 @@ score_user = 0
 score_comp = 0
 
 while score_user < 10 and score_comp < 10:
-    user_turn = input("Choose Rock, Paper or Scissors: ").upper()
+    user_turn = input("Choose Rock, Paper or Scissors: ").strip().upper()
+
+    if user_turn not in options:
+        print("Invalid choice. Please choose Rock, Paper or Scissors.")
+        continue
+
     comp_turn = random.choice(options)
 
     print(f"You chose {user_turn}")
