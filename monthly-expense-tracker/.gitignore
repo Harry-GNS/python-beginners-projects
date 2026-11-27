@@ -1,0 +1,5 @@
+# Created when the budget is changed
+budget.json
+
+# Copy of an expenses.json that could not be read
+expenses.json.bak

@@ -24,17 +24,13 @@ A beautifully designed, minimal, and fully functional **GUI Calculator** built u
 
 ### How to Run
 
-1. Clone the repository:
+1. Navigate to the project folder:
    ```bash
-   git clone https://github.com/vijayrajeshr/simple-tkinter-calculator.git
+   cd utilities/simple-calculator
    ```
-2. Navigate to the project folder:
+2. Run the calculator:
    ```bash
-   cd simple-tkinter-calculator
-   ```
-3. Run the calculator:
-   ```bash
-   python calculator.py
+   python tkinter-calculator.py
    ```
 ---
 
@@ -61,10 +57,10 @@ A beautifully designed, minimal, and fully functional **GUI Calculator** built u
 ## 📂 File Structure
 
 ```
-📁 simple-tkinter-calculator/
+📁 simple-calculator/
 │
-├── calculator.py      # Main application file
-└── README.md          # Project documentation
+├── tkinter-calculator.py   # Main application file
+└── readme.md               # Project documentation
 ```
 
 ## By **Vijay Rajesh R**  - [vijayrajeshr](https://github.com/vijayrajeshr)

@@ -8,10 +8,11 @@ def play():
     while True:
         try:
             guess = int(input("Guess a number between 1 and 100: "))
-            attempts += 1
             if guess < 1 or guess > 100:
                 print("Please guess a number within the range.")
-            elif guess < number_to_guess:
+                continue
+            attempts += 1
+            if guess < number_to_guess:
                 print("Too low. Try again.")
             elif guess > number_to_guess:
                 print("Too high. Try again.")

@@ -35,4 +35,4 @@ Feel free to contribute or modify this project!
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the [MIT License](../../LICENSE).

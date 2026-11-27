@@ -9,7 +9,7 @@ Features
 - Delete selected expenses.
 - Clear all recorded expenses.
 - View total spending and remaining monthly budget.
-- Set and update a monthly budget.
+- Set and update a monthly budget, which is remembered the next time you open the application.
 - Save expenses in a JSON file so they remain available after restarting the application.
 - Simple graphical user interface built with Tkinter.
 
@@ -40,6 +40,10 @@ How to Run
 Data Storage
 
 Expenses are stored locally in "expenses.json". The application creates or updates this file when expenses are saved.
+
+The monthly budget is stored in "budget.json", which is created the first time you change the budget.
+
+If "expenses.json" cannot be read, the application starts with an empty list and keeps a copy of the unreadable file as "expenses.json.bak".
 
 Future Improvements
 

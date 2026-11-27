@@ -1,17 +1,28 @@
-from bankmanager import BankManager, AccountIDError
+import math
+
+from bankmanager import BankManager, AccountIDError, DataFileError
 from accounts import InsufficientFundsError
 
 
 def get_float(prompt: str) -> float:
     while True:
         try:
-            return float(input(prompt))
+            value = float(input(prompt))
         except ValueError:
             print("Please enter a valid number.")
+            continue
+        if math.isfinite(value):
+            return value
+        print("Please enter a valid number.")
 
 
 def main():
-    manager = BankManager()
+    try:
+        manager = BankManager()
+    except DataFileError as e:
+        print("Error:", e)
+        return
+
     print("Welcome to the Banking Management System")
 
     while True:
@@ -31,18 +42,18 @@ def main():
                 print(f"Account created. ID: {account.account_number}")
 
             elif choice == "2":
-                acc_id = input("Account ID: ")
+                acc_id = input("Account ID: ").strip()
                 amount = get_float("Deposit amount: ")
-                print("New balance:", manager.deposit(acc_id, amount))
+                print(f"New balance: {manager.deposit(acc_id, amount):.2f}")
 
             elif choice == "3":
-                acc_id = input("Account ID: ")
+                acc_id = input("Account ID: ").strip()
                 amount = get_float("Withdrawal amount: ")
-                print("New balance:", manager.withdraw(acc_id, amount))
+                print(f"New balance: {manager.withdraw(acc_id, amount):.2f}")
 
             elif choice == "4":
-                acc_id = input("Account ID: ")
-                print("Balance:", manager.get_balance(acc_id))
+                acc_id = input("Account ID: ").strip()
+                print(f"Balance: {manager.get_balance(acc_id):.2f}")
 
             elif choice == "5":
                 print("Goodbye!")

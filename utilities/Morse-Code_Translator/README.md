@@ -18,6 +18,7 @@ This project was built as part of the `python-beginners-projects` repository.
 1. Run the script:
    ```bash
    python morse_translator.py
+   ```
 
 ---
 
@@ -30,6 +31,7 @@ This project was built as part of the `python-beginners-projects` repository.
     Enter the text to encode: HELLO WORLD
     Encoded Morse:
     .... . .-.. .-.. ---   .-- --- .-. .-.. -..
+   ```
 
 ---
 
@@ -41,6 +43,7 @@ This project was built as part of the `python-beginners-projects` repository.
     Enter the Morse code to decode: .... . .-.. .-.. ---   .-- --- .-. .-.. -..
     Decoded Text:
     HELLO WORLD
+   ```
 
 ---
 

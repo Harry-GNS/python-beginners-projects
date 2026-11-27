@@ -12,7 +12,7 @@ Run the script in your terminal with the line: python HangMan.py
 
 Guess one letter at a time.
 
-Each incorrect guess reduces your remaining attempts (starts at 8).
+Each incorrect guess reduces your remaining attempts (starts at 7).
 
 If you reveal all letters before running out of attempts, you win.
 

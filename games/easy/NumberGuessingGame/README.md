@@ -12,6 +12,3 @@ A simple command-line game where you try to guess a randomly selected number bet
 ```bash
 python3 number_guessing_game.py
 ```
-
----
-**Contributor:** Your Name Here

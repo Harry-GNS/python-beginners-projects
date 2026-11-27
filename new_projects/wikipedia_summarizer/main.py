@@ -1,4 +1,9 @@
+import warnings
+
 import wikipedia
+
+# The wikipedia library prints a parser warning when a topic is ambiguous
+warnings.filterwarnings("ignore", category=UserWarning, module="wikipedia")
 
 
 def summarize_topic(topic, sentences=3):
@@ -6,7 +11,8 @@ def summarize_topic(topic, sentences=3):
         summary = wikipedia.summary(topic, sentences=sentences)
         return summary
     except wikipedia.exceptions.DisambiguationError as e:
-        return f"Topic is ambiguous. Try one of these:\n{e.options[:5]}"
+        options = "\n".join(f"- {option}" for option in e.options[:5])
+        return f"Topic is ambiguous. Try one of these:\n{options}"
     except wikipedia.exceptions.PageError:
         return "No Wikipedia page found for this topic."
     except Exception as e:

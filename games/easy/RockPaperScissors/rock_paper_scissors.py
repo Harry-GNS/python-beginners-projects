@@ -2,10 +2,10 @@ import random
 
 def get_user_choice():
     choices = ['rock', 'paper', 'scissors']
-    choice = input("Enter rock, paper, or scissors: ").lower()
+    choice = input("Enter rock, paper, or scissors: ").strip().lower()
     while choice not in choices:
         print("Invalid choice. Try again.")
-        choice = input("Enter rock, paper, or scissors: ").lower()
+        choice = input("Enter rock, paper, or scissors: ").strip().lower()
     return choice
 
 def get_computer_choice():
@@ -23,12 +23,17 @@ def determine_winner(user, computer):
 
 def play():
     print("Welcome to Rock, Paper, Scissors!")
-    user_choice = get_user_choice()
-    computer_choice = get_computer_choice()
-    print(f"You chose: {user_choice}")
-    print(f"Computer chose: {computer_choice}")
-    result = determine_winner(user_choice, computer_choice)
-    print(result)
+    while True:
+        user_choice = get_user_choice()
+        computer_choice = get_computer_choice()
+        print(f"You chose: {user_choice}")
+        print(f"Computer chose: {computer_choice}")
+        result = determine_winner(user_choice, computer_choice)
+        print(result)
+        again = input("Play again? (y/n): ").strip().lower()
+        if again != "y":
+            print("Thanks for playing!")
+            break
 
 if __name__ == "__main__":
     play()

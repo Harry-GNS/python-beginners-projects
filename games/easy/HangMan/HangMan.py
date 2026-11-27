@@ -6,15 +6,15 @@ used_letters= ''
 display = '_' * len(word)
 
 i = 0
-while i in range(7):  # User has 8 guesses (i is 0 based)
+while i in range(7):  # User can make 7 incorrect guesses
     while True:  # Loop to verify the input is a new letter
         input_letter = input('Guess a letter: ').lower()
-        if input_letter in used_letters:
+        if len(input_letter) != 1 or input_letter not in abc:
+            print('Invalid input. Please type a single letter.')
+        elif input_letter in used_letters:
             print('You already guessed that letter. Please try again.')
-        elif input_letter in abc:
-            break
         else:
-            print('Invalid input. Please type a letter: ')
+            break
     letter_found = False  # Resetting the value for every new guess
 
     for n in range(len(word)):
@@ -28,7 +28,7 @@ while i in range(7):  # User has 8 guesses (i is 0 based)
         print("Incorrect letter")
         i+=1
     if display == word:
-        print("You guessed the word! You had " + str(7-i + 1) + " guesses left")
+        print("You guessed the word! You had " + str(7 - i) + " guesses left")
         break
 
     used_letters = used_letters + input_letter  # Saving used letters
