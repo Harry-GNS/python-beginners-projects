@@ -10,4 +10,5 @@ A beginner-friendly Python project that processes student results.
 ## How to Run
 ```bash
 python main.py
+```
 
