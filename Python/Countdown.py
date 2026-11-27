@@ -1,6 +1,14 @@
 import time
 
-seconds= int(input("Enter time in seconds: "))
+while True:
+    try:
+        seconds= int(input("Enter time in seconds: "))
+    except ValueError:
+        print("Please enter a whole number")
+        continue
+    if seconds>=0:
+        break
+    print("Please enter a number that is not negative")
 
 for counter in reversed(range (0,seconds+1)):
     seconds= counter % 60
