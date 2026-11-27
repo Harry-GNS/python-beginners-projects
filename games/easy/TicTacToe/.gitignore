@@ -1,0 +1,3 @@
+# Ignore Python's internal cache files
+__pycache__/
+*.pyc
